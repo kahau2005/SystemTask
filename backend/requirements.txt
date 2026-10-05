@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+passlib
+python-jose[cryptography]
+apscheduler
+websockets
+pydantic
+pydantic-settings
+python-multipart

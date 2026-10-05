@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: systemtask_backend
+    ports:
+      - "8086:8000"
+    restart: unless-stopped
+    volumes:
+      - backend_data:/app
+
+  frontend:
+    build: ./frontend
+    container_name: systemtask_frontend
+    ports:
+      - "8085:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  backend_data:
