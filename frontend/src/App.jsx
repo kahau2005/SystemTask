@@ -3,8 +3,8 @@ import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Home, ListTodo, AlertTriangle, User as UserIcon, Bell, Plus, CheckCircle, X, Check, XCircle } from 'lucide-react';
 import { format } from 'date-fns';
 
-const API_URL = `http://${window.location.hostname}:8086`;
-const WS_URL = `ws://${window.location.hostname}:8086/ws`;
+const API_URL = `${window.location.protocol}//${window.location.host}/api`;
+const WS_URL = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/api/ws`;
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
